@@ -10,6 +10,8 @@
  */
 
 function upperCaseEachElementInArray(array) {
+  var upperCaseArray = arrayString.split("");
+  console.log(array);
   /*** Dont forget to return an array with all elements being upper-cased */
 }
 
@@ -25,7 +27,9 @@ function upperCaseEachElementInArray(array) {
  * // {firstName:'Tom',MiddleName:'Harris', lastName:'Jerry'}
  */
 
-function addMiddleNameToObject(names, middleName) {}
+function addMiddleNameToObject(names, middleName) {
+  
+}
 
 /**
  * Use split method to return an array on white space

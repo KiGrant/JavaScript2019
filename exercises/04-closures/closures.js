@@ -47,7 +47,28 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = numberOfRounds => {};
+const guessingGame = numberOfRounds => {
+  let amountOFGamesPlayed = 0;
+  const answer = 5;
+  return function(guess) {
+    if (amountOFGamesPlayed === 3) {
+      console.log("game over!");
+    } else if (guess > answer) {
+      amountOFGamesPlayed++;
+      console.log("you are to high!");
+    } else if (guess < answer) {
+      amountOFGamesPlayed++;
+      console.log("you are too low!");
+    } else if (guess === answer) {
+      console.log("you got it");
+    }
+  };
+};
+const game1 = guessingGame();
+game1(1);
+game1(3);
+game1(6);
+game1(9);
 
 module.exports = {
   calculator,
