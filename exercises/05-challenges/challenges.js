@@ -13,7 +13,20 @@
  *
  */
 
-const getIndexToIns = (array, num) => {};
+const getIndexToIns = (array, num) => {
+  let newArray = array.sort();
+  let insNum = array.push(num);
+  let i = newArray.indexOf(num);
+  if (insNum === newArray.length) {
+    console.log(i);
+    return i;
+  }
+};
+getIndexToIns([50, 10, 20, 30, 40], 35);
+getIndexToIns([[5, 3, 20, 3], 5);
+getIndexToIns([40, 60], 80);
+getIndexToIns([40, 60], 10);
+
 
 /**
  * Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both.
