@@ -5,14 +5,26 @@
  * @param {function} callback
  * @returns {array} new array
  */
-const map = (arr, callback) => {};
+const map = (arr, callback) => {
+  let newArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    let result = callback(arr[i], i, arr);
+    newArray.push(result);
+  }
+  return newArray;
+};
 
 /**
  * Multiplies each value in an array by two
  * @param {array} arr an array of numbers e.g. [1, 3, 5]
  * @returns {array} new array, with each value doubled e.g. [2, 5, 10]
  */
-const doubleValues = arr => {};
+const doubleValues = arr => {
+  let doubledNumbers = arr.map(function(numbers) {
+    return numbers * 2;
+  });
+  return doubledNumbers;
+};
 
 /**
  * Given an array nested with objects
