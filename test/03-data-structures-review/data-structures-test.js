@@ -19,6 +19,7 @@ describe('Data Structures review', () => {
     expect(upperCasedArray).to.be.equalTo(['Rusty', 'Nails', 'Fido']);
   });
   it('it should add a Middle Name to an Existing Object', () => {
+    console.log(addMiddleNameToObject({firstName: 'tim',LastName: 'jones'},'timmy'))
     const nameObj = addMiddleNameToObject(
       { firstName: 'Tom', lastName: 'Kent' },
       'Edward'

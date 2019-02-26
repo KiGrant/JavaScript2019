@@ -45,16 +45,15 @@ const doubleValues = arr => {
  * extractKey(arrayOfNames, 'name'); // ['Ellie', 'Tim', 'Matt', 'Colt']
  */
 const arrayOfNames = [
-  {name: 'Ellie', age: 20},
-  {name: 'Tim', age: 35},
-  {name: 'Matt', age: 18},
-  {name: 'Colt', age: 47}
+  { name: "Ellie", age: 20 },
+  { name: "Tim", age: 35 },
+  { name: "Matt", age: 18 },
+  { name: "Colt", age: 47 }
 ];
 const extractKey = (arr, key) => {
-const names = arrayOfNames.map(n => n.name);
-console.log(names)
-};    
-extractKey(arrayOfNames)
+  return arr.map(key => key.name);
+};
+extractKey(arrayOfNames);
 
 module.exports = {
   map,

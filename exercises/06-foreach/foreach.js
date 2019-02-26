@@ -19,7 +19,9 @@ const forEach = (arr, callback) => {
  *   showFirstAndLast(['colt','matt', 'tim', 'udemy']); // ["ct", "mt", "tm", "uy"]
  *   showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
  */
-const showFirstAndLast = arr => {};
+const showFirstAndLast = arr => {
+  
+};
 
 module.exports = {
   forEach,
