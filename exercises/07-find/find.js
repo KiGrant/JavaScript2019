@@ -9,12 +9,10 @@ const find = (arr, callback) => {
   let newArray = [];
   for (var i = 0; i < arr.length; i++) {
     let result = callback(arr[i], i, arr);
-    console.log(result);
-    // if (result === result ) {
-    //   newArray.push(result);
-    // }
+    if (result) {
+      return arr[i];
+    }
   }
-  // return newArray;
 };
 
 /**
@@ -36,7 +34,9 @@ const find = (arr, callback) => {
  * findUser(users, 1025);
  * // { id: 1025, username:"newyorkfarmer", email: "johndoe@example.com" }
  */
-const findUser = (arr, id) => {};
+const findUser = (arr, id) => {
+  return arr.find(user => user.id === id);
+};
 
 module.exports = {
   find,
