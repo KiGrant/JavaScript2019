@@ -65,9 +65,9 @@ generateTally(["es6", "es6", "es6", "es5", "react", "angular", "vue"]);
  * }
  */
 const arrayToObject = arr => {
-  return array.reduce((obj,user){
-    obj[user.id] = user; 
-    return obj
+  return arr.reduce(function(obj, user) {
+    obj[user.id] = user;
+    return obj;
   }, {});
 };
 
