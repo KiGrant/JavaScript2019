@@ -21,10 +21,10 @@ class Calculator {
     // Sets properties and sets up instance
   }
   add = num => {
-    total += num;
+    this.total = this.total += num;
   };
   get = () => {
-    return total;
+    return this.total;
   };
 }
 
@@ -33,10 +33,10 @@ class NewCalculator extends Calculator {
     super(startValue);
   }
   subtract = num => {
-    total -= num;
+    this.total = this.total -= num;
   };
   get = () => {
-    return total;
+    return this.total;
   };
 }
 
