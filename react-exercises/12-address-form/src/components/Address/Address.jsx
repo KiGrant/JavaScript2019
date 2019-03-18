@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Address.css";
+import countries from "../../assets/countries";
+import states from "../../assets/states";
 // Import data from "assets/countries.js" and "assets/states.js" here
 
 class Address extends Component {
@@ -10,8 +12,15 @@ class Address extends Component {
     city: "",
     state: "",
     postalCode: "",
-    ZipCode: ""
+    country: ""
   };
+  setfirstName = e => this.setState({ firstName: e.target.value });
+  setlastName = e => this.setState({ lastName: e.target.value });
+  setaddressLine1 = e => this.setState({ addressLine1: e.target.value });
+  setcity = e => this.setState({ city: e.target.value });
+  setstate = e => this.setState({ state: e.target.value });
+  setpostalCode = e => this.setState({ postalCode: e.target.value });
+  setcountry = e => this.setState({ country: e.target.value });
 
   render() {
     return (
@@ -25,6 +34,8 @@ class Address extends Component {
             name="firstName"
             type="text"
             className="form-control"
+            value={this.state.firstName}
+            onChange={this.setfirstName}
           />
         </div>
         <div className="form-group">
@@ -36,6 +47,8 @@ class Address extends Component {
             name="lastName"
             type="text"
             className="form-control"
+            value={this.state.lastName}
+            onChange={this.setlastName}
           />
         </div>
         <div className="form-group">
@@ -47,6 +60,8 @@ class Address extends Component {
             name="addressLine1"
             type="text"
             className="form-control"
+            value={this.state.addressLine1}
+            onChange={this.setaddressLine1}
           />
           <p className="help-block text-muted">
             Street address, P.O. box, company name, c/o
@@ -57,14 +72,31 @@ class Address extends Component {
           <label htmlFor="city" className="control-label">
             City / Town
           </label>
-          <input id="city" name="city" type="text" className="form-control" />
+          <input
+            id="city"
+            name="city"
+            type="text"
+            className="form-control"
+            value={this.state.city}
+            onChange={this.setcity}
+          />
         </div>
         <div className="form-group">
           <label htmlFor="state" className="control-label">
             State / Province / Region
           </label>
           {/* Loop through the states you imported here */}
-          <select id="state" name="state" className="form-control" />
+          <select
+            id="state"
+            name="state"
+            className="form-control"
+            value={this.state.state}
+            onChange={this.setstate}
+          >
+            {states.map(elem => {
+              return <option value="states">{elem}</option>;
+            })}
+          </select>
         </div>
 
         <div className="form-group">
@@ -76,6 +108,8 @@ class Address extends Component {
             name="postalCode"
             type="text"
             className="form-control"
+            value={this.state.postalCode}
+            onChange={this.setpostalCode}
           />
         </div>
 
@@ -84,7 +118,17 @@ class Address extends Component {
             Country
           </label>
           {/* Loop through the countries you imported here */}
-          <select id="country" name="country" className="form-control" />
+          <select
+            id="country"
+            name="country"
+            className="form-control"
+            value={this.state.country}
+            onChange={this.setcountry}
+          >
+            {countries.map(elem => {
+              return <option value="countries">{elem}</option>;
+            })}
+          </select>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit

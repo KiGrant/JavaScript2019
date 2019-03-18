@@ -21,8 +21,10 @@ const { tree } = require("./recursion-tree-data");
  * }
  */
 const findId = (data, id) => {
-  for (){
+  for (let x in data){
+    if(data[x].id === id){
 
+    }
   }
 };
 
@@ -54,7 +56,18 @@ const findId = (data, id) => {
  * }
  */
 
-const deleteStore = (stores, id) => {};
+const deleteStore = (stores, id) => {
+  stores.map((store, id)=> {
+    if (store.id === id) stores.splice(idx,1);
+    else if(
+      store.branches
+      && store.branch.length 
+      && typeof store.branches ==="object"
+    ){
+      deleteStore(store.branches)
+    }
+  }
+};
 
 module.exports = {
   findId,
